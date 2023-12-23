@@ -1,0 +1,111 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<body>
+    <div id="titleDiv" class="text-center"><h1>D&D Combat Coordinator</h1></div>
+
+    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" id="primaryButton" type="button">Primary Action</button>
+            <button class="btn btn-primary" id="bonusButton" type="button">Bonus Action</button>
+            <button class="btn btn-primary" id="movementButton" type="button">Movement - </button>
+        </div>
+        <input type="checkbox" id="rogue"> Rogue
+        <input type="checkbox" id="cleric"> Cleric
+        <input type="checkbox" id="fighter"> Fighter
+        <input type="checkbox" id="barbarian"> Dragonshit
+        <input type="checkbox" id="bard"> Bard
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            let color1 = 0, color2 = 0, color3 = 0;
+
+            $("#primaryButton").click(function(){
+                if (color1 == 0){
+                    $(this).css("background-color", "red");
+                    $(this).css("border-color", "red");
+                    color1 = 1;
+                }
+                else {
+                    $(this).css("background-color", "blue");
+                    $(this).css("border-color", "blue");
+                    color1 = 0;
+                }
+            });
+
+            $("#bonusButton").click(function(){
+                if (color2 == 0){
+                    $(this).css("background-color", "red");
+                    $(this).css("border-color", "red");
+                    color2 = 1;
+                }
+                else {
+                    $(this).css("background-color", "blue");
+                    $(this).css("border-color", "blue");
+                    color2 = 0;
+                }
+            });
+
+            $("#movementButton").click(function(){
+                if (color3 == 0){
+                    $(this).css("background-color", "red");
+                    $(this).css("border-color", "red");
+                    color3 = 1;
+                }
+                else {
+                    $(this).css("background-color", "blue");
+                    $(this).css("border-color", "blue");
+                    color3 = 0;
+                }
+            });
+
+            $('#rogue').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#button').text('Movement - 25');
+                } else {
+                    $('#button').text('Movement - ');
+                }
+            });
+
+            $('#cleric').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#button').text('Movement - 30');
+                } else {
+                    $('#button').text('Movement - ');
+                }
+            });
+
+            $('#fighter').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#button').text('Movement - 30');
+                } else {
+                    $('#button').text('Movement - ');
+                }
+            });
+
+            $('#barbarian').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#button').text('Movement - 30');
+                } else {
+                    $('#button').text('Movement - ');
+                }
+            });
+
+            $('#bard').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#button').text('Movement - 25');
+                } else {
+                    $('#button').text('Movement - ');
+                }
+            });
+        });
+    </script>
+</body>
+
+
